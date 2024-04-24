@@ -3,7 +3,9 @@ const routes = require("./routes/api");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const app = express();
-mongoose.connect("mongodb://localhost/productgo");
+const dbURI =
+  "mongodb+srv://MIE:meyangs126@cluster0.slzl1aq.mongodb.net/blog-store?retryWrites=true&w=majority&appName=Cluster0";
+mongoose.connect(dbURI);
 mongoose.Promise = global.Promise;
 app.use(bodyParser.json());
 app.use("/api", routes);
