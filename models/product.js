@@ -30,5 +30,5 @@ const ProductSchema = new Schema({
 });
 
 const Product = mongoose.model("product", ProductSchema);
-
+Product.createIndexes({ geometry: "2dsphere" });
 module.exports = Product;
