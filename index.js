@@ -17,7 +17,7 @@ mongoose
   })
   .catch((err) => console.log(err));
 mongoose.Promise = global.Promise;
-app.use(cors());
+app.use(cors("*"));
 app.use(bodyParser.json());
 app.use("/api", routes);
 app.use((err, req, res, next) => {
