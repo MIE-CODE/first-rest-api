@@ -1,5 +1,6 @@
 const express = require("express");
 const routes = require("./routes/api");
+const cors = require("cors");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const app = express();
@@ -16,6 +17,7 @@ mongoose
   })
   .catch((err) => console.log(err));
 mongoose.Promise = global.Promise;
+app.use(cors());
 app.use(bodyParser.json());
 app.use("/api", routes);
 app.use((err, req, res, next) => {
